@@ -43,7 +43,6 @@ detekt {
 }
 
 dockerCompose {
-    useComposeFiles = listOf("./docker-compose.yml")
     isRequiredBy(project.tasks.test)
 }
 
