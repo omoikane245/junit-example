@@ -23,7 +23,7 @@ import java.time.LocalDateTime
 @ExtendWith(SpringExtension::class)
 @MybatisTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-class UserEntityMapperTest {
+class UserMapperTest {
 
 	@Autowired
 	lateinit var jdbcTemplate: JdbcTemplate
