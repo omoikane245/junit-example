@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: JUnit-Example
+  main:
+    banner-mode: off
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  thymeleaf:
+    cache: false
+  messages:
+    basename: messages
+    encoding: UTF-8
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath*:/mybatis/mapper/**/*.xml
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+
+server:
+  port: ${PORT:5000}
+  tomcat:
+    threads:
+      max: ${TOMCAT_THREADS_MAX:150}
+      min-spare: ${TOMCAT_THREADS_MIN:20}
+  shutdown: graceful
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+      tracking-modes:
+        - cookie
