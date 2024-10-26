@@ -44,7 +44,8 @@ class UserMapperTest {
 			val actual = testSuite.selectAll(listOf("U001", "U003"))
 
 			// verify
-			val expected = jdbcTemplate.query("SELECT * FROM TBL_USER WHERE ID IN (?, ?);", TblUserEntityRowMapper(), "U001", "U003")
+			val expected = jdbcTemplate.query("SELECT * FROM TBL_USER WHERE ID IN (?, ?);",
+				TblUserEntityRowMapper(), "U001", "U003")
 			assertEquals(expected, actual)
 		}
 	}
