@@ -2,12 +2,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.lang.Thread.sleep
 
 plugins {
-    id("org.springframework.boot") version "3.1.0"
+    id("org.springframework.boot") version "3.3.5"
     id("io.spring.dependency-management") version "1.1.6"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
     id("com.avast.gradle.docker-compose") version "0.17.10"
-    id("io.gitlab.arturbosch.detekt") version "1.17.0"
+    id("io.gitlab.arturbosch.detekt") version "1.20.0"
 }
 
 group = "com.example"
@@ -29,15 +29,15 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1")
-    implementation("com.mysql:mysql-connector-j")
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+    implementation("com.mysql:mysql-connector-j:8.2.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.mockk:mockk:1.13.3")
-    testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1")
+    testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3")
 }
 
 detekt {
-    toolVersion = "1.17.0"
+    toolVersion = "1.20.0"
     config = files("./detekt.yml")
     buildUponDefaultConfig = true
 }
