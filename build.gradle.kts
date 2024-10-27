@@ -3,12 +3,12 @@ import java.lang.Thread.sleep
 
 plugins {
     jacoco
-    id("org.springframework.boot") version "2.7.7"
-    id("io.spring.dependency-management") version "1.0.15.RELEASE"
-    kotlin("jvm") version "1.6.21"
-    kotlin("plugin.spring") version "1.6.21"
+    id("org.springframework.boot") version "3.3.5"
+    id("io.spring.dependency-management") version "1.1.6"
+    kotlin("jvm") version "1.8.21"
+    kotlin("plugin.spring") version "1.8.21"
     id("com.avast.gradle.docker-compose") version "0.17.10"
-    id("io.gitlab.arturbosch.detekt") version "1.17.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.0"
 }
 
 group = "com.example"
@@ -30,16 +30,14 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0")
-    implementation("com.mysql:mysql-connector-j")
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+    implementation("com.mysql:mysql-connector-j:9.1.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.mockk:mockk:1.13.3")
-    testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.0")
+    testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3")
 }
 
 detekt {
-    toolVersion = "1.17.0"
-    config = files("./detekt.yml")
     buildUponDefaultConfig = true
 }
 
